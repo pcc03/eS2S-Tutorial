@@ -37,13 +37,13 @@ Please first check if you have all the following equipment and APK files.
   	> ```bash
   	> conda create -n eS2S python=3.10
   	> conda activate eS2S
-  	> pip install --file "/path/to/your/SiHear_server/requirements.txt"
+  	> pip install -r "/path/to/your/Server/requirements.txt"
   	>```
   
   - Start Server Process 
  	- Under your eS2S Conda Environment, run the code to start your server process
   	> ```bash
- 	 > cd "/path/to/your/SiHear_server" 
+ 	 > cd "/path/to/your/Server" 
   	> ifconfig # check your IP address under en0 network interface
   	> python server.py --host "your_ip_address" --port "port_number" # recommand to use the tested port number 5000
   	>```
@@ -100,6 +100,7 @@ If you install only one pair of smart glasses, we encourage you to run the follo
 	  
 	- Enter the IP address and port number set for the server in Step 1
 	- Click the "SAVE" button
+	- Force quit the app and restart to make the change in effect
 
 - @GLASS, 
 	- Enter the apps installed at step 2
