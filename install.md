@@ -12,11 +12,13 @@ Please first check if you have all the following equipment and APK files.
   
 - Android smartphones (each for one pair of glasses)
    | Phone models (tested) |
-   | Pixel 5|
-   | OnePlus 13R |
-   | OnePlus 12R |
-   | OnePlus 10 Pro 5G |
-   |--------------|
+   |------------------------|
+   | Pixel 5                |
+   | OnePlus 13R            |
+   | OnePlus 12R            |
+   | OnePlus 10 Pro 5G      |
+   | Galaxy S23 Ultra|	|
+   
 
 - Computers (Windows or Mac OS)
      | Computer models (tested) | OS      | CPU/GPU      | Memory |
@@ -29,11 +31,15 @@ Please first check if you have all the following equipment and APK files.
 	 - anysign-0.3.3-py3-none-any.whl #the wheel for installing the anysign package for sign prediction
 	 - Server
 	 	- server.py #the main Python file for running the server process
+		- best_model_appv1.pt #the weights for model inference
 		- other dependent files
   
   - Conda Environment Preparation
-  	- Modify the path of "anysign wheel" to yours in the line "anysign @ file:///path/to/your/anysign-0.3.3-py3-none-any.whl"  in "requirements.txt" #Be careful that you should replace the "/path/.." instead of "path/...".
-  	- Run the following commands to prepare the environment
+  	- Open "requirements.txt"
+	- Modify the path of "anysign wheel" to yours in the line "anysign @ file:///path/to/your/anysign-0.3.3-py3-none-any.whl"  in "requirements.txt" #Be careful that you should replace the "/path/.." instead of "path/...".
+	- Open "config/test.yaml" file 
+	- Modify the path of "best_model_appv1.pt" to yours in the line "weights: /Users/chenpeng/Downloads/TranslationCore/src/main/python/model/best_model_appv1.pt"
+	- Run the following commands to prepare the environment
   	> ```bash
   	> conda create -n eS2S python=3.10
   	> conda activate eS2S
@@ -43,9 +49,11 @@ Please first check if you have all the following equipment and APK files.
   - Start Server Process 
  	- Under your eS2S Conda Environment, run the code to start your server process
   	> ```bash
- 	 > cd "/path/to/your/Server" 
-  	> ifconfig # check your IP address under en0 network interface
-  	> python server.py --host "your_ip_address" --port "port_number" # recommand to use the tested port number 5000
+ 	> cd "/path/to/your/Server" 
+	> #check your server's IP address
+  	> ifconfig
+	> # recommend to use the tested port number 5000
+  	> python server.py --host "your_ip_address" --port "port_number" 
   	>```
   
 - APK (download from [this Link](https://mssn3.cs.purdue.edu/owncloud/index.php/s/USpvpHcQI20CJQO))
@@ -59,9 +67,9 @@ We use GLASS, PHONE, and COMPUTER to represent the devices to be used.
 - COMPUTER (tethered with GLASS) 
 	- Download the **`MASTClient-release.apk`** to your COMPUTER.
 	- If you're using Windows, 
-		- follow [Developer Environment Setup](https://www.inmoxr.com/blogs/faqs/how-to-enable-developer-mode-on-inmo-air2?srsltid=AfmBOooQtK8mMnBwbHibvZdLWGSjLsI_6yiXB41DvwZGEocOlHL-gpbo) to set up the GLASS to developer mode and install the APK.
+		- Follow [Developer Environment Setup](https://www.inmoxr.com/blogs/faqs/how-to-enable-developer-mode-on-inmo-air2?srsltid=AfmBOooQtK8mMnBwbHibvZdLWGSjLsI_6yiXB41DvwZGEocOlHL-gpbo) to set up the GLASS to developer mode and install the APK.
 	- If you're using macOS, 
-		- Still follow the above blog to enable the developer mode. The steps are also pasted here:
+		- Follow [Developer Environment Setup](https://www.inmoxr.com/blogs/faqs/how-to-enable-developer-mode-on-inmo-air2?srsltid=AfmBOooQtK8mMnBwbHibvZdLWGSjLsI_6yiXB41DvwZGEocOlHL-gpbo) to set up the GLASS to developer mode. The steps are also pasted here:
 			- Navigate to Settings > About > My Glasses 
 			- Long-press the right touchpad for 1.5 seconds on the GLASS twice to access developer mode activation. 
 			- Enter the password: 20210108 
@@ -84,14 +92,12 @@ We use GLASS, PHONE, and COMPUTER to represent the devices to be used.
 If you install only one pair of smart glasses, we encourage you to run the following test. 
 - @GLASS,
 	- Go to "settings" and enable the "Bluetooth" on GLASS
-	-  Search and connect to the target PHONE in the Bluetooth settings
+	- Search and connect to the target PHONE in the Bluetooth settings
 - @PHONE,
 	- Make sure you connect to the WIFI the same as the one on the computer
 	- Enter the app installed at step 2
 	- Grant all the permissions when you first open the app
-	- Select <img src="./figure/connect_device_button.png" alt="Connect_device" width="100"/> button and choose the "Connect to Device". 
-	- Connect to the target GLASS (e.g., named as "INMO Air2") in the "PAIRED DEVICES"
-	- Open the dropdown spinner <img src="./figure/User_mode.jpg" alt="User_Mode" width="120"/>
+		- Open the dropdown spinner <img src="./figure/User_mode.jpg" alt="User_Mode" width="120"/>
 		- TO test the mode for hearing people, select "Hearing User"
 		- TO test the mode for deaf or hard-of-hearing people, select "Signing User" 
 	- Click <img src="./figure/IP_setting_button.jpg" alt="IP_Setting" width="80"/> button and enter the page  
@@ -105,6 +111,12 @@ If you install only one pair of smart glasses, we encourage you to run the follo
 - @GLASS, 
 	- Enter the apps installed at step 2
 	- Grant all the permissions when you first open the app
+	
+- @PHONE,
+	- Select <img src="./figure/connect_device_button.png" alt="Connect_device" width="100"/> button and choose the "Connect to Device". 
+	- Connect to the target GLASS (e.g., named as "INMO Air2") in the "PAIRED DEVICES"
+
+- @GLASS, 
 	- If testing the "hearing user" mode, the screen is like  
 	
 	  <img src="./figure/MASTClient_hearing_start.jpg" alt="MASTClient_hearing_start" width="280"/>
