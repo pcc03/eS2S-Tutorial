@@ -26,13 +26,15 @@ Please first check if you have all the following equipment and APK files.
      | MacBook Air 2022          | MacOS   | CPU          | 16GB   |
      | Legion Pro 7i Gen 8       | Windows | RTX 4090 GPU | 32GB   |  
      
-  - Download the [Server](https://mssn3.cs.purdue.edu/owncloud/index.php/s/qhMlNkkTFs9gjGL) folder to your local folder. The folder includes:
-  	 - requirements.txt #the requirements for the conda environment
-	 - anysign-0.3.3-py3-none-any.whl #the wheel for installing the anysign package for sign prediction
-	 - Server
-	 	- server.py #the main Python file for running the server process
-		- best_model_appv1.pt #the weights for model inference
-		- other dependent files
+  - Download the [Server_env](https://mssn3.cs.purdue.edu/owncloud/index.php/s/qhMlNkkTFs9gjGL) folder to your local folder. The folder includes:
+
+  **Server/**
+  - `requirements.txt`  — the requirements for the conda environment  
+  - `anysign-0.3.3-py3-none-any.whl`  — the wheel for installing the anysign package for sign prediction  
+  - **Server/**
+    - `server.py`  — the main Python file for running the server process  
+    - `best_model_appv1.pt`  — the weights for model inference  
+    - other dependent files
   
   - Conda Environment Preparation
   	- Open "requirements.txt"
@@ -49,11 +51,11 @@ Please first check if you have all the following equipment and APK files.
   - Start Server Process 
  	- Under your eS2S Conda Environment, run the code to start your server process
   	> ```bash
- 	> cd "/path/to/your/Server" 
+ 	> cd </path/to/your/Server>
 	> #check your server's IP address
   	> ifconfig
 	> # recommend to use the tested port number 5000
-  	> python server.py --host "your_ip_address" --port "port_number" 
+  	> python server.py --host <your_ip_address> --port <port_number>
   	>```
   
 - APK (download from [this Link](https://mssn3.cs.purdue.edu/owncloud/index.php/s/USpvpHcQI20CJQO))
