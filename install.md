@@ -51,11 +51,11 @@ Please first check if you have all the following equipment and APK files.
   - Start Server Process 
  	- Under your eS2S Conda Environment, run the code to start your server process
   	> ```bash
- 	> cd </path/to/your/Server>
+ 	> cd */path/to/your/Server*
 	> #check your server's IP address
   	> ifconfig
 	> # recommend to use the tested port number 5000
-  	> python server.py --host <your_ip_address> --port <port_number>
+  	> python server.py --host *your_ip_address* --port *port_number*
   	>```
   
 - APK (download from [this Link](https://mssn3.cs.purdue.edu/owncloud/index.php/s/USpvpHcQI20CJQO))
