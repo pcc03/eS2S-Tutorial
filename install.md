@@ -26,9 +26,9 @@ Please first check if you have all the following equipment and APK files.
      | MacBook Air 2022          | MacOS   | CPU          | 16GB   |
      | Legion Pro 7i Gen 8       | Windows | RTX 4090 GPU | 32GB   |  
      
-  - Download the [Server_env](https://mssn3.cs.purdue.edu/owncloud/index.php/s/qhMlNkkTFs9gjGL) folder to your local folder. The folder includes:
+  - Download the [Server_Code](https://mssn3.cs.purdue.edu/owncloud/index.php/s/qhMlNkkTFs9gjGL) folder to your local folder. The folder includes:
 
-  **Server/**
+  **Server_Code/**
   - `requirements.txt`  — the requirements for the conda environment  
   - `anysign-0.3.3-py3-none-any.whl`  — the wheel for installing the anysign package for sign prediction  
   - **Server/**
@@ -45,29 +45,27 @@ Please first check if you have all the following equipment and APK files.
   	> ```bash
   	> conda create -n eS2S python=3.10
   	> conda activate eS2S
-  	> pip install -r "/path/to/your/Server/requirements.txt"
+  	> pip install -r </path/to/your/Server/requirements.txt>
   	>```
   
   - Start Server Process 
  	- Under your eS2S Conda Environment, run the code to start your server process
   	> ```bash
- 	> cd */path/to/your/Server*
+ 	> cd </path/to/your/Server_Code/Server>
 	> #check your server's IP address
   	> ifconfig
 	> # recommend to use the tested port number 5000
-  	> python server.py --host *your_ip_address* --port *port_number*
+  	> python server.py --host <your_ip_address> --port <port_number>
   	>```
-  
-- APK (download from [this Link](https://mssn3.cs.purdue.edu/owncloud/index.php/s/USpvpHcQI20CJQO))
 
 ### Step 2: Installation for one pair of glasses and phone
 
 We use GLASS, PHONE, and COMPUTER to represent the devices to be used. 
 
+  
+- APK (download from [this Link](https://mssn3.cs.purdue.edu/owncloud/index.php/s/USpvpHcQI20CJQO))
 
-- PHONE: select **`MASTServer-release.apk`** to download -> select "Download anyway" -> open with "Package installer".
-- COMPUTER (tethered with GLASS) 
-	- Download the **`MASTClient-release.apk`** to your COMPUTER.
+- COMPUTER ADB Setup
 	- If you're using Windows, 
 		- Follow [Developer Environment Setup](https://www.inmoxr.com/blogs/faqs/how-to-enable-developer-mode-on-inmo-air2?srsltid=AfmBOooQtK8mMnBwbHibvZdLWGSjLsI_6yiXB41DvwZGEocOlHL-gpbo) to set up the GLASS to developer mode and install the APK.
 	- If you're using macOS, 
@@ -88,13 +86,17 @@ We use GLASS, PHONE, and COMPUTER to represent the devices to be used.
 			> ```bash
 			> adb install "/path/to/your/apkfile.apk"
 			> ```
+- 
+(tethered with GLASS) 	
+- Download the **`MASTClient-release.apk`** to your COMPUTER.		
+PHONE: select **`MASTServer-release.apk`** to download -> select "Download anyway" -> open with "Package installer".
 		
 ### Step 3: First Use with one pair of glasses
 
 If you install only one pair of smart glasses, we encourage you to run the following test. 
 - @GLASS,
 	- Go to "settings" and enable the "Bluetooth" on GLASS
-	- Search and connect to the target PHONE in the Bluetooth settings
+	- "Remote Control "Search and connect to the target PHONE in the Bluetooth settings
 - @PHONE,
 	- Make sure you connect to the WIFI the same as the one on the computer
 	- Enter the app installed at step 2
