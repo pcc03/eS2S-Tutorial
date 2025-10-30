@@ -39,7 +39,7 @@ Please first check if you have all the following equipment and APK files.
     └── Server/
         ├── server.py                        # Main Flask server for running inference
         ├── best_model_appv1.pt              # Pretrained model weights
-        ├── config/                     	  # model configuration folder
+        ├── config/                     	 # model configuration folder
         └── ...                              # Other dependent scripts
     ```
 
