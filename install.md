@@ -28,27 +28,14 @@ Please first check if you have all the following equipment and APK files.
      
   - Download the [Server_Code](https://mssn3.cs.purdue.edu/owncloud/index.php/s/qhMlNkkTFs9gjGL) folder to your local folder. The folder includes:
 
-  **Server_Code/**
-  - `requirements.txt`  — the requirements for the conda environment  
-  - `anysign-0.3.3-py3-none-any.whl`  — the wheel for installing the anysign package for sign prediction  
-  - **Server/**
-    - `server.py`  — the main Python file for running the server process  
-    - `best_model_appv1.pt`  — the weights for model inference  
-    - other dependent files
+  	**Server_Code/**
+  	- `requirements.txt`  — the requirements for the conda environment  
+  	- `anysign-0.3.3-py3-none-any.whl`  — the wheel for installing the anysign package for sign prediction  
+  	- **Server/**
+    	- `server.py`  — the main Python file for running the server process  
+    	- `best_model_appv1.pt`  — the weights for model inference  
+    	- other dependent files
   
-  
-  Server_Code/
-│
-├── requirements.txt # Conda environment dependencies
-├── anysign-0.3.3-py3-none-any.whl # Wheel for installing the AnySign package
-│
-└── Server/
-├── server.py # Main Flask server for running inference
-├── best_model_appv1.pt # Pretrained model weights
-├── config.yaml # (Optional) model configuration file
-├── utils.py # (Optional) helper functions
-├── static/ # (Optional) front-end assets (HTML, JS)
-└── ... # Other dependent scripts
 
   - Conda Environment Preparation
   	- Open "requirements.txt"
