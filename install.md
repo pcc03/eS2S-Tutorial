@@ -36,6 +36,20 @@ Please first check if you have all the following equipment and APK files.
     - `best_model_appv1.pt`  — the weights for model inference  
     - other dependent files
   
+  
+  Server_Code/
+│
+├── requirements.txt # Conda environment dependencies
+├── anysign-0.3.3-py3-none-any.whl # Wheel for installing the AnySign package
+│
+└── Server/
+├── server.py # Main Flask server for running inference
+├── best_model_appv1.pt # Pretrained model weights
+├── config.yaml # (Optional) model configuration file
+├── utils.py # (Optional) helper functions
+├── static/ # (Optional) front-end assets (HTML, JS)
+└── ... # Other dependent scripts
+
   - Conda Environment Preparation
   	- Open "requirements.txt"
 	- Modify the path of "anysign wheel" to yours in the line "anysign @ file:///path/to/your/anysign-0.3.3-py3-none-any.whl"  in "requirements.txt" #Be careful that you should replace the "/path/.." instead of "path/...".
@@ -86,7 +100,7 @@ We use GLASS, PHONE, and COMPUTER to represent the devices to be used.
 			> ```bash
 			> adb install "/path/to/your/apkfile.apk"
 			> ```
-- 
+- User ADB to install ""
 (tethered with GLASS) 	
 - Download the **`MASTClient-release.apk`** to your COMPUTER.		
 PHONE: select **`MASTServer-release.apk`** to download -> select "Download anyway" -> open with "Package installer".
