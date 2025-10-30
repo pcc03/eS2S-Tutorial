@@ -26,16 +26,19 @@ Please first check if you have all the following equipment and APK files.
      | MacBook Air 2022          | MacOS   | CPU          | 16GB   |
      | Legion Pro 7i Gen 8       | Windows | RTX 4090 GPU | 32GB   |  
      
+  
+  
   - Download the [Server_Code](https://mssn3.cs.purdue.edu/owncloud/index.php/s/qhMlNkkTFs9gjGL) folder to your local folder. The folder includes:
 
-  	**Server_Code/**
-  	- `requirements.txt`  — the requirements for the conda environment  
-  	- `anysign-0.3.3-py3-none-any.whl`  — the wheel for installing the anysign package for sign prediction  
-  	- **Server/**
-    	- `server.py`  — the main Python file for running the server process  
-    	- `best_model_appv1.pt`  — the weights for model inference  
-    	- other dependent files
-  ```text
+  **Server_Code/**
+  - `requirements.txt` — the requirements for the conda environment  
+  - `anysign-0.3.3-py3-none-any.whl` — the wheel for installing the anysign package for sign prediction  
+  - **Server/**
+    - `server.py` — the main Python file for running the server process  
+    - `best_model_appv1.pt` — the weights for model inference  
+    - other dependent files
+
+```text
 Server_Code/
 │
 ├── requirements.txt                     # Conda environment dependencies
