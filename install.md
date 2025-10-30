@@ -51,7 +51,7 @@ Server_Code/
     ├── utils.py                         # (Optional) helper functions
     ├── static/                          # (Optional) front-end assets (HTML, JS)
     └── ...                              # Other dependent scripts
-```text
+```
 
   - Conda Environment Preparation
   	- Open "requirements.txt"
